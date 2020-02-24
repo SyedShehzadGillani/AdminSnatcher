@@ -2,6 +2,10 @@
 import requests
 from colorama import Fore,Back,Style,init
 import random
+import argparse
+parse = argparse.ArgumentParser()
+parse.add_argument('-u','--url',type=str,help='URL To Be Attacked!')
+args = parse.parse_args()
 init(autoreset=True)
 colorsare = (Fore.YELLOW,Fore.GREEN,Fore.RED,Fore.BLUE,Fore.WHITE,Fore.MAGENTA,Fore.CYAN)
 print (colorsare[random.randint(0,6)] + Style.DIM + '''
@@ -14,8 +18,8 @@ n                                                                         ''')
 print(colorsare[random.randint(0,6)] + '''
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+''')
 print(colorsare[random.randint(0,3)] + '''			
-			-: Team Pak Cyber Squad:- 
-		< https://pakcybersquad.blogspot.com >
+			-: Team Pak Black Army:- 
+		< https://facebook.com/PakBlackArmy />
 	-: Created By : Zuck Rajput & AkDevil Hunter :- 
 	''')
 payload = [
@@ -435,7 +439,7 @@ payload = [
 "/admin_panel.html",
 "/adm_cp/"]
 def searchpanel():
-			url = input(Fore.YELLOW + "Please Enter URL: " + Style.RESET_ALL)
+			url = args.url
 			for admin in payload:
 				getrequest = requests.get(url + admin)
 				statuscode = str(getrequest.status_code)
@@ -449,20 +453,4 @@ def searchpanel():
 					print(url + admin + "--> F*ck Redirecting -_-")
 				else: 
 					print(Fore.BLUE + url + admin + Style.RESET_ALL + "--> " + statuscode)
-letsattack = input(colorsare[random.randint(0,5)] + "Command: ")
-if letsattack == "help":
-	print(colorsare[random.randint(0,5)] + '''
-Welcome To Admin Snatcher
-If You Want to find any Directory or Admin Panel Of Website then Type: "attack" In The Terminal.
-Help: Help Will Show You This Menu.
-Requirements: 
-Tested On Python3.
-Requests,Random & colorama Library Should Be Installed In Python In Order To Run Properly.. 
-Special Thanks To Team Invisible Soldiers Of Islam.
-Created By Zuck Rajput & AkDevil Hunter.
-Team Pak Cyber Squad < https://pakcybersquad.blogspot.com >
-		''')
-elif letsattack == "attack":
-	searchpanel()
-else:
-	print(Fore.RED + "Please Enter Correct Command!!")
+searchpanel()
