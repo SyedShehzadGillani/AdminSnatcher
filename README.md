@@ -1,6 +1,9 @@
 ![AdminSnatcher In Action](https://i.ibb.co/NSBPRSX/adminsnatcher.png)
 # AdminSnatcher
 Let's Snatch The Admin Panel Of Any Website In Seconds.
+# Usage: 
+1) Go To The Terminal and cd To The Path.
+2) Type: python3 adminsnatcher.py --url https://example.com
 # Requirements
 1) Python 3
 2) Following Libraries Should Be Installed In Python3: 
